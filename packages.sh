@@ -10,6 +10,7 @@ pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 && \
 pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35 && \
 echo -e "\n[g14]\nServer = https://arch.asus-linux.org" >> /etc/pacman.conf && \
 pacman -Suy --noconfirm && \
+pacman -R --noconfirm nvidia-open-dkms nvidia-utils
 pacman -S --noconfirm linux-g14 linux-g14-headers nvidia-open-dkms nvidia-utils && \
 pacman -S --noconfirm asusctl supergfxctl rog-control-center power-profiles-daemon && \
 systemctl enable --now power-profiles-daemon supergfxd && \
